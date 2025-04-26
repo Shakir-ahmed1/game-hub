@@ -38,6 +38,7 @@ const GamePlatformIcons = ({ platforms }: Props) => {
         if (Object.keys(iconMap).includes(platform.slug)) {
             return (
               <Icon
+                color="gray.500"
                 key={platform.id || platform.slug}
                 as={iconMap[platform.slug]}
               />
