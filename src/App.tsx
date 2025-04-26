@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { Button, Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
+import ColorModeSwitch from "./components/Demo";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <GridItem area="main" bg="red">
         Main
       </GridItem>
-      <GridItem area="side" bg="blue" display={{base: 'none', lg: 'block'}}>
+      <GridItem area="side" bg="blue" display={{ base: "none", lg: "block" }}>
         Side
       </GridItem>
     </Grid>
