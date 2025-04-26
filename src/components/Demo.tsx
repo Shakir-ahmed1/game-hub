@@ -9,7 +9,7 @@ const ColorModeSwitch = () => {
 
   return (
     <HStack paddingRight="10px" >
-    <Switch.Root checked={colorMode==='dark'} onCheckedChange={toggleColorMode} colorPallete="red">
+    <Switch.Root checked={colorMode==='dark'} onCheckedChange={toggleColorMode}>
     <Switch.HiddenInput />
     <Switch.Control/>
     <Switch.Label />
