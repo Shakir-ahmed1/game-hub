@@ -34,7 +34,6 @@ const GamePlatformIcons = ({ platforms }: Props) => {
   return (
     <HStack marginY={1}>
       {platforms.map(({ platform }) => {
-        console.log("Platform Id", platform.id)
         if (Object.keys(iconMap).includes(platform.slug)) {
             return (
               <Icon

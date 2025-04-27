@@ -7,7 +7,7 @@ const ScoreBadge = ({score}: Props) => {
   const color = score > 75? 'green': 'yellow'
   return (
     <div>
-        <Badge fontSize={15} colorScheme={color}>{score}</Badge>
+        <Badge fontSize={15} bg={color}>{score}</Badge>
     </div>
   )
 }

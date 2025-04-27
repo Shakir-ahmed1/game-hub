@@ -9,11 +9,16 @@ import GenreList from "./components/GenreList";
 
 function App() {
   return (
-    <Grid templateAreas={{ lg: `"nav nav" "side main"`, base: '"nav" "main"' }}>
+    <Grid templateAreas={{ lg: `"nav nav" "side main"`, base: '"nav" "main"' }}
+    templateColumns={{
+      lg: '200px 1fr',
+      base: '1fr'
+    }}
+    >
       <GridItem area="nav">
         <NavBar></NavBar>
       </GridItem>
-      <GridItem area="side" display={{ base: "none", lg: "block" }}>
+      <GridItem area="side" display={{ base: "none", lg: "block" }} paddingLeft={5}>
         <GenreList />
       </GridItem>
       <GridItem area="main">
