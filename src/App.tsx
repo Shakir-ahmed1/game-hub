@@ -6,8 +6,14 @@ import NavBar from "./components/NavBar";
 import ColorModeSwitch from "./components/Demo";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import { Genre } from "./hooks/useGenres";
 
 function App() {
+  const [selectedGenre, setSelectedGenre] = useState<Genre| null>(null)
+
+  const onSelectGenre = (genre: Genre) => {
+    setSelectedGenre(genre)
+  }
   return (
     <Grid templateAreas={{ lg: `"nav nav" "side main"`, base: '"nav" "main"' }}
     templateColumns={{
@@ -19,10 +25,10 @@ function App() {
         <NavBar></NavBar>
       </GridItem>
       <GridItem area="side" display={{ base: "none", lg: "block" }} paddingLeft={5}>
-        <GenreList />
+        <GenreList onGenreSelect={onSelectGenre} selectedGenre={selectedGenre} />
       </GridItem>
       <GridItem area="main">
-        <GameGrid></GameGrid>
+        <GameGrid selectedGenre={selectedGenre}></GameGrid>
       </GridItem>
     </Grid>
   );
