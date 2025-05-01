@@ -10,9 +10,9 @@ import {
 } from "react-icons/fa";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
-import { Platform } from "../hooks/useGames";
 import { HStack, Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
+import { Platform } from "../hooks/useGenres";
 
 interface Props {
   platforms: { platform: Platform }[];
@@ -35,13 +35,13 @@ const GamePlatformIcons = ({ platforms }: Props) => {
     <HStack marginY={1}>
       {platforms.map(({ platform }) => {
         if (Object.keys(iconMap).includes(platform.slug)) {
-            return (
-              <Icon
-                color="gray.500"
-                key={platform.id || platform.slug}
-                as={iconMap[platform.slug]}
-              />
-            );
+          return (
+            <Icon
+              color="gray.500"
+              key={platform.id || platform.slug}
+              as={iconMap[platform.slug]}
+            />
+          );
         }
       })}
     </HStack>
