@@ -18,6 +18,8 @@ const SortSelector = ({ onSelectSortBy , sortedBy}: Props) => {
   return (
     <NativeSelect.Root
       width={"200px"}
+      size='sm'
+      paddingBottom={2}
       onChange={(event) => {
         onSelectSortBy(sortOptions.find(item=> item.value === event.target?.value)?.value || '');
       }}

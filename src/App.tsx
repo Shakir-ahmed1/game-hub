@@ -9,6 +9,7 @@ import GenreList from "./components/GenreList";
 import { Genre, Platform } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -32,7 +33,7 @@ function App() {
   const onSearchTextChange = (searchText: string) => {
     setGameQuery({ ...gameQuery, searchText });
   };
-  return (
+  return (<>
     <Grid
       templateAreas={{ lg: `"nav nav" "side main"`, base: '"nav" "main"' }}
       templateColumns={{
@@ -53,14 +54,16 @@ function App() {
           selectedGenre={gameQuery.genre}
         />
       </GridItem>
-      <GridItem area="main">
-        <HStack>
+      <GridItem area="main" marginTop={5} paddingX={5}>
+        <GameHeading gameQuery={gameQuery}></GameHeading>
+        <HStack marginY={5}>
         <PlatformSelector onPlatformSelect={onSelectPlatform} />
         <SortSelector onSelectSortBy={onSelectSortBy} sortedBy={gameQuery.sortBy}/>
         </HStack>
         <GameGrid gameQuery={gameQuery}></GameGrid>
       </GridItem>
     </Grid>
+    </>
   );
 }
 export default App;
