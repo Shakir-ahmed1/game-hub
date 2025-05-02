@@ -1,5 +1,5 @@
 import { NativeSelect } from "@chakra-ui/react";
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 interface Props {
   onSelectSortBy: (sortBy: string) => void;
@@ -20,7 +20,7 @@ const SortSelector = ({ onSelectSortBy , sortedBy}: Props) => {
       width={"200px"}
       size='sm'
       paddingBottom={2}
-      onChange={(event) => {
+      onChange={(event: ChangeEvent<HTMLInputElement>) => {
         onSelectSortBy(sortOptions.find(item=> item.value === event.target?.value)?.value || '');
       }}
     >
